@@ -1,0 +1,14 @@
+# Directories
+.next/
+.node_modules/
+.npm-only-allow/
+.swc/
+playwright-report/
+test-results/
+
+# Files
+.env.local
+.gitignore
+.prettierrc
+graph.svg
+package-lock.json

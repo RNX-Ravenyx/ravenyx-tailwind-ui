@@ -1,0 +1,86 @@
+import { Meta, Story, ArgsTable, Canvas } from '@storybook/addon-docs/blocks'
+
+import { ThemeProvider, useTheme } from './ThemeProvider'
+import { Button } from '../../components/Button/Button'
+
+<Meta title="Theming/ThemeProvider" component={ThemeProvider} />
+
+# 🎨 ThemeProvider
+
+`ThemeProvider` enables **dynamic theming** for the UI library, allowing you to customize colors, fonts, and other UI styles.
+
+---
+
+## 📌 **Default Theme**
+
+By default, `ThemeProvider` provides the following values:
+
+```tsx
+const defaultTheme = {
+  primary: '#1DA1F2',
+  secondary: '#14171A',
+  background: '#FFFFFF',
+  foreground: '#000000',
+  fontFamily: 'Inter, sans-serif'
+}
+```
+
+If no theme is provided, this default theme will be used.
+
+---
+
+# 🎨 Customizing the Theme
+
+To override the default theme, wrap your app with `ThemeProvider` and pass a `theme` prop:
+
+```tsx
+import { ThemeProvider } from 'tailwind-ui-library'
+
+const customTheme = {
+  primary: '#FF5733',
+  secondary: '#222831',
+  background: '#FAFAFA',
+  foreground: '#000000',
+  fontFamily: 'Arial, sans-serif'
+}
+
+function App() {
+  return (
+    <ThemeProvider theme={customTheme}>
+      <MyComponent />
+    </ThemeProvider>
+  )
+}
+```
+
+🎭 Example: Using the Theme Inside a Component
+Components can access the current theme using the useTheme hook.
+
+```tsx
+import { useTheme } from './ThemeProvider'
+
+const ThemedButton = () => {
+  const theme = useTheme()
+  return <button style={{ backgroundColor: theme.primary, color: theme.foreground }}>Click Me</button>
+}
+```
+
+<Canvas>
+  <Story name="Themed Button">
+    <ThemeProvider theme={{ primary: '#FF5733', foreground: '#FFFFFF' }}>
+      <ThemedButton />
+    </ThemeProvider>
+  </Story>
+</Canvas>
+
+# 🔧 Interactive Theme Customization
+
+Use the interactive story below to dynamically change the theme and see how it affects the button component.
+
+<Canvas>
+  <Story id="theming-themeprovider--interactive-theme" />
+</Canvas>
+
+# 📌 Props Table
+
+<ArgsTable of={ThemeProvider} />
