@@ -1,0 +1,146 @@
+import { Meta, Story, ArgsTable, Canvas } from '@storybook/addon-docs/blocks'
+import { Button } from './Button'
+import { ArrowPathIcon } from '@heroicons/react/24/outline'
+
+<Meta title="General/Button" component={Button} />
+
+# 🔘 Button
+
+The `Button` component is used to **trigger actions** and supports various styles, sizes, icons, and loading states.
+
+---
+
+## 📌 **Usage**
+
+```tsx
+import { Button } from '@ravenyx/tailwind-ui'
+;<Button type="primary">Click Me</Button>
+```
+
+---
+
+## 🎨 **Variants**
+
+The `Button` component supports **five types**:
+
+- **Primary** (`type="primary"`) - The main action button
+- **Default** (`type="default"`) - A neutral button
+- **Dashed** (`type="dashed"`) - A button with a dashed border
+- **Text** (`type="text"`) - A button without background
+- **Link** (`type="link"`) - Works like an anchor tag
+
+<Canvas>
+  <Story name="Button Variants">
+    <>
+      <Button type="primary">Primary</Button>
+      <Button type="default">Default</Button>
+      <Button type="dashed">Dashed</Button>
+      <Button type="text">Text</Button>
+      <Button type="link" href="https://example.com">
+        Link
+      </Button>
+    </>
+  </Story>
+</Canvas>
+
+---
+
+## 🔷 **Sizes**
+
+The `Button` supports three sizes:
+
+- **Small** (`size="small"`)
+- **Middle** (Default)
+- **Large** (`size="large"`)
+
+<Canvas>
+  <Story name="Button Sizes">
+    <>
+      <Button size="small">Small</Button>
+      <Button size="middle">Middle</Button>
+      <Button size="large">Large</Button>
+    </>
+  </Story>
+</Canvas>
+
+---
+
+## ⚠ **Danger & Ghost Buttons**
+
+Use `danger` to indicate **destructive actions**.
+
+The `ghost` button has **transparent background**.
+
+<Canvas>
+  <Story name="Danger & Ghost Buttons">
+    <>
+      <Button type="primary" danger>
+        Danger
+      </Button>
+      <Button type="default" ghost>
+        Ghost
+      </Button>
+    </>
+  </Story>
+</Canvas>
+
+---
+
+## ⏳ **Loading & Disabled**
+
+- `loading` shows a **spinner** and disables interaction.
+- `disabled` prevents clicks.
+
+<Canvas>
+  <Story name="Loading & Disabled">
+    <>
+      <Button type="primary" loading icon={<ArrowPathIcon className="h-5 w-5 animate-spin" />}>
+        Loading
+      </Button>
+      <Button type="primary" disabled>
+        Disabled
+      </Button>
+    </>
+  </Story>
+</Canvas>
+
+---
+
+## 📷 **Icons & Icon Position**
+
+You can add **icons** before or after the text.
+
+<Canvas>
+  <Story name="Buttons with Icons">
+    <>
+      <Button icon={<ArrowPathIcon className="h-5 w-5" />} iconPosition="start">
+        Start Icon
+      </Button>
+      <Button icon={<ArrowPathIcon className="h-5 w-5" />} iconPosition="end">
+        End Icon
+      </Button>
+    </>
+  </Story>
+</Canvas>
+
+---
+
+## 🎭 **Block & Gradient Buttons**
+
+- `block` makes the button **full width**.
+- `gradient` applies a **color gradient**.
+
+<Canvas>
+  <Story name="Block & Gradient">
+    <>
+      <Button block>Block Button</Button>
+      <Button gradient>Gradient Button</Button>
+    </>
+  </Story>
+</Canvas>
+
+---
+
+## ⚙ **Props**
+
+<ArgsTable of={Button} />

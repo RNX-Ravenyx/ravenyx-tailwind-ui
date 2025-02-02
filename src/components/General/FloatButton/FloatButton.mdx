@@ -1,0 +1,56 @@
+import { Meta, Canvas, Story, ArgsTable } from '@storybook/blocks'
+import { MagnifyingGlassIcon, PlusIcon } from '@heroicons/react/24/outline'
+
+import { FloatButton } from './FloatButton'
+
+<Meta title="General/FloatButton" component={FloatButton} />
+
+# 🚀 FloatButton
+
+A floating action button that **sticks** to the screen.
+
+## 🎨 Customization
+
+The **FloatButton** supports multiple styles, sizes, and positions.
+
+## 📌 Examples
+
+### **Default**
+
+A simple floating button.
+
+<Canvas>
+  <Story name="Default">
+    <FloatButton onClick={() => alert('Clicked!')} />
+  </Story>
+</Canvas>
+
+---
+
+### **Custom Icon**
+
+You can replace the default icon with any other **React node**.
+
+<Canvas>
+  <Story name="With Custom Icon">
+    <FloatButton onClick={() => alert('Clicked!')} icon={<MagnifyingGlassIcon className="size-6" />} />
+  </Story>
+</Canvas>
+
+---
+
+### **Large Button**
+
+A bigger button for emphasis.
+
+<Canvas>
+  <Story name="Large Button">
+    <FloatButton onClick={() => alert('Clicked!')} size="large" icon={<PlusIcon className="size-8" />} />
+  </Story>
+</Canvas>
+
+---
+
+# 🔧 Props
+
+<ArgsTable of={FloatButton} />
